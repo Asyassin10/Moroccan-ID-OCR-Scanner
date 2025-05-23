@@ -1,6 +1,6 @@
-# Moroccan ID OCR Scanner
+<img src="https://play-lh.googleusercontent.com/dfTuY2vcsRQYl_tV_N5s2KilnGRlJtqVm6h6Z0W6ZL0SetdJEXlDwQAsLHpQkWzZgg=w240-h480-rw" alt="Logo" width="100"/>
 
-https://hub.docker.com/r/yassine374/moroccan-id-ocr
+# Moroccan ID OCR Scanner
 
 A Flask-based REST API service that uses Optical Character Recognition (OCR) to extract information from Moroccan National ID cards. The service processes uploaded ID card images and returns structured data including personal information, ID numbers, dates, and other relevant details.
 
@@ -68,7 +68,7 @@ docker run -d -p 5000:5000 --name moroccan-ocr yassine-as/moroccan-id-ocr:latest
 #### Option 2: Build from Source
 ```bash
 # Clone the repository
-git clone <your-repository-url>
+git clone https://github.com/Asyassin10/Moroccan-ID-OCR-Scanner.git
 cd moroccan-id-ocr-scanner
 
 # Build the Docker image
@@ -226,32 +226,6 @@ Run with:
 ```bash
 docker-compose up -d
 ```
-
-### Environment Variables
-
-- `FLASK_APP=app.py` (default)
-- `FLASK_ENV=production` (default)
-
-## Technical Details
-
-### Image Preprocessing
-
-The service applies several image enhancement techniques to improve OCR accuracy:
-
-1. **Grayscale Conversion**: Converts color images to grayscale for better text recognition
-2. **Noise Reduction**: Uses Non-local Means Denoising to remove image noise
-3. **Contrast Enhancement**: Applies CLAHE (Contrast Limited Adaptive Histogram Equalization)
-4. **Format Optimization**: Converts processed images to optimal format for OCR
-
-### Data Extraction Logic
-
-The system uses intelligent pattern matching and text analysis:
-
-- **ID Number Recognition**: Supports multiple Moroccan ID formats (alphanumeric patterns)
-- **Date Parsing**: Handles various date formats (DD/MM/YYYY, DD-MM-YYYY, etc.)
-- **City Recognition**: Extensive database of Moroccan cities and regions
-- **Name Extraction**: Filters out common keywords to identify personal names
-- **Gender Detection**: Recognizes gender indicators in French and Arabic contexts
 
 ### Supported ID Formats
 
