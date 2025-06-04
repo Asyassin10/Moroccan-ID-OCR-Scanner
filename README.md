@@ -34,7 +34,6 @@ The service can extract the following information from Moroccan ID cards:
 - **Production Ready**: Uses Gunicorn WSGI server with optimized settings
 
 ### Requirements (for reference)
-```
 Flask==2.3.3
 easyocr==1.7.0
 opencv-python==4.8.1.78
@@ -43,7 +42,7 @@ pillow<10.0.0
 torch==2.0.1
 torchvision==0.15.2
 gunicorn==21.2.0
-```
+
 
 ## Installation & Deployment
 
@@ -59,10 +58,10 @@ This application is designed to run in Docker containers for easy deployment and
 #### Option 1: Pull from Docker Hub
 ```bash
 # Pull the pre-built image from Docker Hub
-docker pull yassine-as/moroccan-id-ocr:latest
+docker pull yassine374/moroccan-id-ocr:latest
 
 # Run the container
-docker run -d -p 5000:5000 --name moroccan-ocr yassine-as/moroccan-id-ocr:latest
+docker run -d -p 5000:5000 --name moroccan-ocr yassine374/moroccan-id-ocr:latest
 ```
 
 #### Option 2: Build from Source
@@ -72,20 +71,20 @@ git clone https://github.com/Asyassin10/Moroccan-ID-OCR-Scanner.git
 cd moroccan-id-ocr-scanner
 
 # Build the Docker image
-docker build -t yassine-as/moroccan-id-ocr:latest .
+docker build -t yassine374/moroccan-id-ocr:latest .
 
 # Run the container
-docker run -d -p 5000:5000 --name moroccan-ocr yassine-as/moroccan-id-ocr:latest
+docker run -d -p 5000:5000 --name moroccan-ocr yassine374/moroccan-id-ocr:latest
 ```
 
 ### Docker Commands
 
 ```bash
 # Build the image
-docker build -t yassine-as/moroccan-id-ocr:latest .
+docker build -t yassine374/moroccan-id-ocr:latest .
 
 # Run the container
-docker run -d -p 5000:5000 --name moroccan-ocr yassine-as/moroccan-id-ocr:latest
+docker run -d -p 5000:5000 --name moroccan-ocr yassine374/moroccan-id-ocr:latest
 
 # Check container status
 docker ps
@@ -100,7 +99,7 @@ docker stop moroccan-ocr
 docker rm moroccan-ocr
 
 # Push to Docker Hub (for maintainers)
-docker push yassine-as/moroccan-id-ocr:latest
+docker push yassine374/moroccan-id-ocr:latest
 ```
 
 ## API Endpoints
@@ -203,13 +202,13 @@ fetch('http://localhost:5000/ocr', {
 
 ### Docker Compose (Recommended)
 
-Create a `docker-compose.yml` file:
+Create a docker-compose.yml file:
 
 ```yaml
 version: '3.8'
 services:
   moroccan-ocr:
-    image: yassine-as/moroccan-id-ocr:latest
+    image: yassine374/moroccan-id-ocr:latest
     ports:
       - "5000:5000"
     restart: unless-stopped
@@ -230,7 +229,7 @@ docker-compose up -d
 ### Supported ID Formats
 
 - Standard Moroccan National ID cards
-- Various ID number patterns: `A123456`, `AB1234567`, `U1234567`, etc.
+- Various ID number patterns: A123456, AB1234567, U1234567, etc.
 - French language text recognition
 - Date formats: DD/MM/YYYY, DD-MM-YYYY, DD.MM.YYYY, YYYY/MM/DD
 
